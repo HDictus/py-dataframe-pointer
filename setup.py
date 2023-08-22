@@ -17,7 +17,7 @@ print(find_packages)
 setup(
     name="dataframe_pointer",
     author="Hugo Dictus",
-    author_email="hugo.dictus@epfl.ch",
+    author_email="h.t.dictus@gmail.com",
     version=VERSION,
     description="",
     long_description=README,
