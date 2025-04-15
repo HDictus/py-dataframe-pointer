@@ -2,7 +2,6 @@
 """Setup."""
 
 import importlib
-import sys
 
 from setuptools import setup, find_packages
 
@@ -10,12 +9,11 @@ from setuptools import setup, find_packages
 with open("README.md", encoding="utf-8") as f:
     README = f.read()
 
-VERSION = "0.0.1"
+VERSION = "0.0.2"
 
-print(find_packages)
 
 setup(
-    name="dataframe_pointer",
+    name="dataframe-pointer",
     author="Hugo Dictus",
     author_email="h.t.dictus@gmail.com",
     version=VERSION,
@@ -27,16 +25,5 @@ setup(
         'pandas'
     ],
     packages=find_packages(),
-    python_requires=">=3.6",
-    classifiers=[
-        "Development Status :: 2 - Pre-Alpha",
-        "Intended Audience :: Education",
-        "Intended Audience :: Science/Research",
-        "Programming Language :: Python",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "Topic :: Scientific/Engineering :: Vision-Analyses",
-    ],
+    python_requires=">=3.6"
 )
