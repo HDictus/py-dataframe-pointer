@@ -46,5 +46,6 @@ class _DFPointer:
     def __str__(self):
         return f"dataframe pointer: {self._df}"
 
-
+    def __repr__(self):
+        return f"dataframe pointer: {hash(self)}"
 

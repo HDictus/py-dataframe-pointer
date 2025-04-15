@@ -15,3 +15,14 @@ def test_df_pointer_differs_by_df():
     assert point1 != point3
     assert point1 == df1.pointer()
     assert point1 == df1.copy().pointer()
+
+
+def test_repr_is_unique_and_consistent():
+    df1 = pd.DataFrame({'a': range(1000)})
+    df2 = pd.DataFrame({'a': range(200)})
+    rep1 =  repr(df1.pointer())
+    rep2 = repr(df2.pointer())
+    assert rep1 != rep2
+    dataframe_pointer.df_pointers = {}
+    assert rep1 == repr(df1.pointer())
+    assert rep2 == repr(df2.pointer())
