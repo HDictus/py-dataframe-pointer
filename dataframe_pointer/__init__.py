@@ -1,5 +1,5 @@
+import hashlib
 import pandas as pd
-
 
 # TODO: create test cases
 
@@ -36,7 +36,10 @@ class _DFPointer:
         self._df = df.copy()
 
     def __hash__(self):
-        return hash(tuple((col, tuple(self.df[col])) for col in self._df.columns))
+        return hash(self._hashable())
+    
+    def _hashable(self):
+        return tuple((col, tuple(self.df[col])) for col in self._df.columns)
 
     @property
     def df(self):
@@ -47,5 +50,6 @@ class _DFPointer:
         return f"dataframe pointer: {self._df}"
 
     def __repr__(self):
-        return f"dataframe pointer: {hash(self)}"
+        stable_hash = hashlib.sha256(str(self._hashable()).encode()).hexdigest()
+        return f"dataframe pointer: {stable_hash}"
 

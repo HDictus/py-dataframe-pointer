@@ -23,6 +23,7 @@ def test_repr_is_unique_and_consistent():
     rep1 =  repr(df1.pointer())
     rep2 = repr(df2.pointer())
     assert rep1 != rep2
+    assert rep1 == "dataframe pointer: 4d3bd387f6bb937ec791c7bf31b82a45fd56e2da2cbdd98a65ab9439355bd895"
     dataframe_pointer.df_pointers = {}
     assert rep1 == repr(df1.pointer())
     assert rep2 == repr(df2.pointer())
