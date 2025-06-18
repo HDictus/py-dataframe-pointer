@@ -9,7 +9,7 @@ from setuptools import setup, find_packages
 with open("README.md", encoding="utf-8") as f:
     README = f.read()
 
-VERSION = "0.0.2"
+VERSION = "0.0.4"
 
 
 setup(

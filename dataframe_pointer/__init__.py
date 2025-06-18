@@ -16,20 +16,20 @@ class PointerAcessor:
 
 
 def _create_dataframe_pointer(df):
-    new_pointer = _DFPointer(df)
+    new_pointer = DFPointer(df)
     if hash(new_pointer) in df_pointers:
         return df_pointers[hash(new_pointer)]
     df_pointers[hash(new_pointer)] = new_pointer
     return new_pointer
 
 
-class _DFPointer:
+class DFPointer:
     """A df pointer acts as a pointer to a dataframe.
 
     It can be used as an element within a dataframe without breaking .groupby and .unique
     
     The .df property is a copy of the relevant dataframe.
-    _DFPointer objects which point to identical dataframes are the __same__ object.
+    DFPointer objects which point to identical dataframes are the __same__ object.
     """
 
     def __init__(self, df):
